@@ -3546,6 +3546,7 @@ void open_file(char * file) {
 			else if (line_matches(env->lines[0], "#!/bin/sh")) set_syntax_by_name("bash");
 			else if (line_matches(env->lines[0], "#!/usr/bin/env python")) set_syntax_by_name("py");
 			else if (line_matches(env->lines[0], "#!/usr/bin/env groovy")) set_syntax_by_name("groovy");
+			else if (line_matches(env->lines[0], "#!/usr/bin/env node")) set_syntax_by_name("javascript");
 		}
 		if (!env->syntax && global_config.syntax_fallback) {
 			set_syntax_by_name(global_config.syntax_fallback);
