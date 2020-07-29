@@ -8796,6 +8796,8 @@ BIM_ACTION(paste_end, 0, "End bracketed paste; restore indentation, completion, 
 	redraw_statusbar();
 }
 
+// TODO: make . repeat last command
+// TODO: J join line
 struct action_map _NORMAL_MAP[] = {
 	{KEY_BACKSPACE, cursor_left_with_wrap, opt_rep, 0},
 	{'V',           enter_line_selection, 0, 0},
@@ -8805,6 +8807,8 @@ struct action_map _NORMAL_MAP[] = {
 	{'o',           append_and_insert, opt_rw, 0},
 	{'a',           insert_after_cursor, opt_rw, 0},
 	{'s',           delete_forward_and_insert, opt_rw, 0},
+	{'d',           enter_line_selection, 0, 0}, // make dd delete line as per vim
+	{'y',           enter_line_selection, 0, 0}, // make yy delete line as per vim
 	{'x',           delete_forward, opt_rep | opt_rw, 0},
 	{'P',           paste, opt_arg | opt_rw, -1},
 	{'p',           paste, opt_arg | opt_rw, 1},
